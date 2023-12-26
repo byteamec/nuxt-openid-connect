@@ -41,6 +41,14 @@ export default defineEventHandler(async (event) => {
   const authUrl = issueClient.authorizationUrl(parameters)
   logger.info('[Login]: Auth Url: ' + authUrl + ',    #sessionid:' + sessionid)
 
+  const logoutUrl = issueClient.endSessionUrl()
+  logger.info('[Login]: Logout Url: ' + logoutUrl)
+  console.log('logoutUrl', logoutUrl)
+  setCookie(event, config.cookiePrefix + 'logout_url', logoutUrl, {
+    maxAge: config.cookieMaxAge,
+    ...config.cookieFlags[sessionkey as keyof typeof config.cookieFlags]
+  })
+
   if (sessionid) {
     setCookie(event, sessionkey, sessionid, {
       maxAge: config.cookieMaxAge,
