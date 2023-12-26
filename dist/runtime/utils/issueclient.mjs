@@ -10,7 +10,7 @@ export const initClient = async (op, req, redirectUris) => {
     client_secret: op.clientSecret,
     redirect_uris: redirectUris,
     response_type: config.response_type,
-    post_logout_redirect_uris: [op.postLogoutRedirectUri],
+    post_logout_redirect_uris: [op.postLogoutRedirectUri]
     // id_token_signed_response_alg (default "RS256")
   });
   return client;

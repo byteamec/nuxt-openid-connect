@@ -11,6 +11,7 @@ export default defineEventHandler((event) => {
   deleteCookie(event, config.cookiePrefix + 'access_token')
   deleteCookie(event, config.cookiePrefix + 'refresh_token')
   deleteCookie(event, config.cookiePrefix + 'user_info')
+  deleteCookie(event, config.cookiePrefix + 'logout_url')
 
   // delete part of cookie userinfo (depends on user's setting.).
   const cookie = config.cookie

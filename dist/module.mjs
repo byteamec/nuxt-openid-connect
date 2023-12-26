@@ -37,6 +37,7 @@ const module = defineNuxtModule({
       clientId: "",
       clientSecret: "",
       callbackUrl: "",
+      postLogoutRedirectUri: "",
       scope: []
     },
     // express-session configuration

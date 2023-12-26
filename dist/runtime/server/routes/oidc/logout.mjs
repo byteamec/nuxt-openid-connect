@@ -9,6 +9,7 @@ export default defineEventHandler((event) => {
   deleteCookie(event, config.cookiePrefix + "access_token");
   deleteCookie(event, config.cookiePrefix + "refresh_token");
   deleteCookie(event, config.cookiePrefix + "user_info");
+  deleteCookie(event, config.cookiePrefix + "logout_url");
   const cookie = config.cookie;
   if (cookie) {
     for (const [key, value] of Object.entries(cookie)) {
